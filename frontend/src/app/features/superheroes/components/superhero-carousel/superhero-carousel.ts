@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgClass, NgFor } from '@angular/common';
+import { NgClass, NgFor, NgIf } from '@angular/common';
 
 export interface ISuperhero {
   id: number;
@@ -14,7 +14,7 @@ export interface ISuperhero {
 @Component({
   selector: 'app-superhero-carousel',
   standalone: true,
-  imports: [NgClass, NgFor],
+  imports: [NgClass, NgFor, NgIf],
   templateUrl: './superhero-carousel.html',
   styleUrl: './superhero-carousel.scss'
 })
@@ -24,7 +24,7 @@ export class SuperheroCarousel {
       id: 1,
       name: 'Spider-Man',
       age: 16,
-      superpower: 'Sentido arácnido, agilidad, trepar muros',
+      superpower: 'Spider-sense, agility, wall-crawling',
       nickname: 'Spidey',
       universe: 'Marvel',
       image: 'assets/spiderman.png'
@@ -33,8 +33,8 @@ export class SuperheroCarousel {
       id: 2,
       name: 'Batman',
       age: 35,
-      superpower: 'Detective, artes marciales, gadgets',
-      nickname: 'El Caballero Oscuro',
+      superpower: 'Detective, martial arts, gadgets',
+      nickname: 'The Dark Knight',
       universe: 'DC',
       image: 'assets/batman.png'
     },
@@ -42,7 +42,7 @@ export class SuperheroCarousel {
       id: 3,
       name: 'Wonder Woman',
       age: 28,
-      superpower: 'Fuerza sobrehumana, lazo de la verdad, vuelo',
+      superpower: 'Super strength, lasso of truth, flight',
       nickname: 'Diana',
       universe: 'DC',
       image: 'assets/wonderwoman.png'
@@ -51,7 +51,7 @@ export class SuperheroCarousel {
       id: 4,
       name: 'Iron Man',
       age: 40,
-      superpower: 'Armadura tecnológica, genio inventor',
+      superpower: 'Powered armor, genius inventor',
       nickname: 'Tony',
       universe: 'Marvel',
       image: 'assets/ironman.png'
@@ -60,7 +60,7 @@ export class SuperheroCarousel {
       id: 5,
       name: 'Superman',
       age: 32,
-      superpower: 'Vuelo, superfuerza, visión láser',
+      superpower: 'Flight, super strength, heat vision',
       nickname: 'Clark',
       universe: 'DC',
       image: 'assets/superman.png'
@@ -69,8 +69,8 @@ export class SuperheroCarousel {
       id: 6,
       name: 'Hulk',
       age: 40,
-      superpower: 'Fuerza ilimitada, regeneración',
-      nickname: 'El Gigante Esmeralda',
+      superpower: 'Unlimited strength, regeneration',
+      nickname: 'The Emerald Giant',
       universe: 'Marvel',
       image: 'assets/hulk.png'
     },
@@ -78,7 +78,7 @@ export class SuperheroCarousel {
       id: 7,
       name: 'Black Widow',
       age: 32,
-      superpower: 'Espionaje, artes marciales, agilidad',
+      superpower: 'Espionage, martial arts, agility',
       nickname: 'Natasha',
       universe: 'Marvel',
       image: 'assets/blackwidow.png'

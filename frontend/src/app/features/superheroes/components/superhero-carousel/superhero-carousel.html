@@ -1,5 +1,5 @@
 <div class="carousel-container">
-  <button class="carousel-arrow left" (click)="prev()" aria-label="Anterior">
+  <button class="carousel-arrow left" (click)="prev()" aria-label="Previous">
     <i class="fas fa-chevron-left"></i>
   </button>
 
@@ -8,30 +8,37 @@
       <img [src]="selectedSuperhero.image" [alt]="selectedSuperhero.name" class="superhero-image" />
       <h2 class="superhero-name">{{ selectedSuperhero.name }}</h2>
       <div class="superhero-meta">
-        <span class="superhero-nickname"><i class="fas fa-user-secret"></i> "{{ selectedSuperhero.nickname }}"</span>
+        <span class="superhero-nickname">"{{ selectedSuperhero.nickname }}"</span>
       </div>
     </div>
     <div class="superhero-data-table">
       <div class="superhero-data-row">
-        <span class="superhero-label age"><i class="fas fa-birthday-cake"></i> Edad:</span>
+        <span class="superhero-label age"><i class="fas fa-birthday-cake"></i> Age:</span>
         <span class="superhero-value">{{ selectedSuperhero.age }}</span>
       </div>
       <div class="superhero-data-row">
-        <span class="superhero-label power"><i class="fas fa-bolt"></i> Poder:</span>
+        <span class="superhero-label power"><i class="fas fa-bolt"></i> Power:</span>
         <span class="superhero-value">{{ selectedSuperhero.superpower }}</span>
       </div>
       <div class="superhero-data-row">
-        <span class="superhero-label universe"><i class="fas fa-globe"></i> Universo:</span>
-        <span class="superhero-value" [ngClass]="selectedSuperhero.universe.toLowerCase()">{{ selectedSuperhero.universe }}</span>
+        <span class="superhero-label universe"><i class="fas fa-globe"></i> Universe:</span>
+        <span class="superhero-value universe-value">
+          <ng-container *ngIf="selectedSuperhero.universe === 'Marvel'">
+            <img src="assets/marvel.png" alt="Marvel" class="universe-logo" />
+          </ng-container>
+          <ng-container *ngIf="selectedSuperhero.universe === 'DC'">
+            <img src="assets/dc.png" alt="DC" class="universe-logo" />
+          </ng-container>
+        </span>
       </div>
     </div>
     <div class="superhero-actions">
-      <button class="action-btn edit" aria-label="Editar"><i class="fas fa-pen"></i></button>
-      <button class="action-btn delete" aria-label="Eliminar"><i class="fas fa-trash"></i></button>
+      <button class="action-btn edit" aria-label="Edit"><i class="fas fa-pen"></i></button>
+      <button class="action-btn delete" aria-label="Delete"><i class="fas fa-trash"></i></button>
     </div>
   </div>
 
-  <button class="carousel-arrow right" (click)="next()" aria-label="Siguiente">
+  <button class="carousel-arrow right" (click)="next()" aria-label="Next">
     <i class="fas fa-chevron-right"></i>
   </button>
 </div>
@@ -47,7 +54,7 @@
   </div>
 </div>
 
-<!-- Botón flotante para añadir superhéroe -->
-<button class="fab-add" aria-label="Añadir superhéroe">
+<!-- Floating button to add superhero -->
+<button class="fab-add" aria-label="Add superhero">
   <i class="fas fa-plus"></i>
 </button>
