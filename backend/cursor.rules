@@ -1,0 +1,31 @@
+# cursor.rules
+
+# Naming
+naming_conventions:
+  classes: PascalCase
+  interfaces: PascalCase starting with "I"
+  enums: PascalCase
+  variables: camelCase
+  constants: UPPER_SNAKE_CASE
+  services: PascalCase ending with "Service"
+  controllers: PascalCase ending with "Controller"
+
+# Architecture
+architecture:
+  enforce_modular_architecture: true
+  prefer_dependency_injection: true
+  enforce_separation_of_concerns: true
+  avoid_logic_in_controllers: true
+  place_business_logic_in_services: true
+  use_dto_for_input_validation: true
+  use_interfaces_for_output: true
+  implement_auth_guard_pattern: true
+
+# Testing
+testing:
+  unit_testing_framework: Jest
+  e2e_testing_framework: Jest + Supertest
+  coverage_threshold: 80
+  test_services_logic: true
+  test_controllers_logic: true
+  mock_external_dependencies: true
