@@ -7,9 +7,6 @@
     <div class="superhero-header">
       <img [src]="selectedSuperhero.image" [alt]="selectedSuperhero.name" class="superhero-image" />
       <h2 class="superhero-name">{{ selectedSuperhero.name }}</h2>
-      <div class="superhero-meta">
-        <span class="superhero-nickname">"{{ selectedSuperhero.nickname }}"</span>
-      </div>
     </div>
     <div class="superhero-data-table">
       <div class="superhero-data-row">
@@ -17,20 +14,21 @@
         <span class="superhero-value">{{ selectedSuperhero.age }}</span>
       </div>
       <div class="superhero-data-row">
+        <span class="superhero-label nickname"><i class="fas fa-user"></i> Nickname:</span>
+        <span class="superhero-value">{{ selectedSuperhero.nickname }}</span>
+      </div>
+      <div class="superhero-data-row">
         <span class="superhero-label power"><i class="fas fa-bolt"></i> Power:</span>
         <span class="superhero-value">{{ selectedSuperhero.superpower }}</span>
       </div>
-      <div class="superhero-data-row">
-        <span class="superhero-label universe"><i class="fas fa-globe"></i> Universe:</span>
-        <span class="superhero-value universe-value">
-          <ng-container *ngIf="selectedSuperhero.universe === 'Marvel'">
-            <img src="assets/marvel.png" alt="Marvel" class="universe-logo" />
-          </ng-container>
-          <ng-container *ngIf="selectedSuperhero.universe === 'DC'">
-            <img src="assets/dc.png" alt="DC" class="universe-logo" />
-          </ng-container>
-        </span>
-      </div>
+    </div>
+    <div class="universe-logo-row">
+      <ng-container *ngIf="selectedSuperhero.universe === 'Marvel'">
+        <img src="assets/marvel.png" alt="Marvel" class="universe-logo" />
+      </ng-container>
+      <ng-container *ngIf="selectedSuperhero.universe === 'DC'">
+        <img src="assets/dc.png" alt="DC" class="universe-logo" />
+      </ng-container>
     </div>
     <div class="superhero-actions">
       <button class="action-btn edit" aria-label="Edit"><i class="fas fa-pen"></i></button>
