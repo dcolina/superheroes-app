@@ -1,20 +1,39 @@
 <div class="carousel-container">
-  <button class="carousel-arrow left" (click)="prev()" aria-label="Anterior">&#x25C0;</button>
+  <button class="carousel-arrow left" (click)="prev()" aria-label="Anterior">
+    <i class="fas fa-chevron-left"></i>
+  </button>
 
   <div class="superhero-card">
-    <img [src]="selectedSuperhero.image" [alt]="selectedSuperhero.name" class="superhero-image" />
-    <div class="superhero-info">
+    <div class="superhero-header">
+      <img [src]="selectedSuperhero.image" [alt]="selectedSuperhero.name" class="superhero-image" />
       <h2 class="superhero-name">{{ selectedSuperhero.name }}</h2>
-      <p class="superhero-nickname">"{{ selectedSuperhero.nickname }}"</p>
-      <p class="superhero-details">
-        <span>Edad: {{ selectedSuperhero.age }}</span> |
-        <span>Poder: {{ selectedSuperhero.superpower }}</span> |
-        <span>Universo: <span [ngClass]="selectedSuperhero.universe.toLowerCase()">{{ selectedSuperhero.universe }}</span></span>
-      </p>
+      <div class="superhero-meta">
+        <span class="superhero-nickname"><i class="fas fa-user-secret"></i> "{{ selectedSuperhero.nickname }}"</span>
+      </div>
+    </div>
+    <div class="superhero-data-table">
+      <div class="superhero-data-row">
+        <span class="superhero-label age"><i class="fas fa-birthday-cake"></i> Edad:</span>
+        <span class="superhero-value">{{ selectedSuperhero.age }}</span>
+      </div>
+      <div class="superhero-data-row">
+        <span class="superhero-label power"><i class="fas fa-bolt"></i> Poder:</span>
+        <span class="superhero-value">{{ selectedSuperhero.superpower }}</span>
+      </div>
+      <div class="superhero-data-row">
+        <span class="superhero-label universe"><i class="fas fa-globe"></i> Universo:</span>
+        <span class="superhero-value" [ngClass]="selectedSuperhero.universe.toLowerCase()">{{ selectedSuperhero.universe }}</span>
+      </div>
+    </div>
+    <div class="superhero-actions">
+      <button class="action-btn edit" aria-label="Editar"><i class="fas fa-pen"></i></button>
+      <button class="action-btn delete" aria-label="Eliminar"><i class="fas fa-trash"></i></button>
     </div>
   </div>
 
-  <button class="carousel-arrow right" (click)="next()" aria-label="Siguiente">&#x25B6;</button>
+  <button class="carousel-arrow right" (click)="next()" aria-label="Siguiente">
+    <i class="fas fa-chevron-right"></i>
+  </button>
 </div>
 
 <div class="carousel-thumbnails">
@@ -27,3 +46,8 @@
     <img [src]="hero.image" [alt]="hero.name" />
   </div>
 </div>
+
+<!-- Botón flotante para añadir superhéroe -->
+<button class="fab-add" aria-label="Añadir superhéroe">
+  <i class="fas fa-plus"></i>
+</button>

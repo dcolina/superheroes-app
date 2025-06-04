@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '@fortawesome/fontawesome-free/css/all.css';
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap');
+
+// Estilos globales de Superheroes App
+body {
+  background: #181c24;
+  font-family: 'Baloo 2', 'Comic Neue', 'Fredoka One', sans-serif;
+}
+
+* {
+  font-family: inherit;
+}
