@@ -24,46 +24,64 @@ export class SuperheroCarousel {
       id: 1,
       name: 'Spider-Man',
       age: 16,
-      superpower: 'Sentido arácnido',
+      superpower: 'Sentido arácnido, agilidad, trepar muros',
       nickname: 'Spidey',
       universe: 'Marvel',
-      image: 'https://static.wikia.nocookie.net/marveldatabase/images/0/0c/Peter_Parker_%28Earth-616%29_from_Spider-Man_Vol_1_1.png'
+      image: 'assets/spiderman.png'
     },
     {
       id: 2,
       name: 'Batman',
       age: 35,
-      superpower: 'Detective, gadgets',
+      superpower: 'Detective, artes marciales, gadgets',
       nickname: 'El Caballero Oscuro',
       universe: 'DC',
-      image: 'https://static.wikia.nocookie.net/batman/images/8/8a/Batman_Bruce_Wayne_0012.jpg'
+      image: 'assets/batman.png'
     },
     {
       id: 3,
       name: 'Wonder Woman',
       age: 28,
-      superpower: 'Fuerza y lazo mágico',
+      superpower: 'Fuerza sobrehumana, lazo de la verdad, vuelo',
       nickname: 'Diana',
       universe: 'DC',
-      image: 'https://static.wikia.nocookie.net/marvel_dc/images/7/7e/Wonder_Woman_0012.jpg'
+      image: 'assets/wonderwoman.png'
     },
     {
       id: 4,
       name: 'Iron Man',
       age: 40,
-      superpower: 'Armadura tecnológica',
+      superpower: 'Armadura tecnológica, genio inventor',
       nickname: 'Tony',
       universe: 'Marvel',
-      image: 'https://static.wikia.nocookie.net/marveldatabase/images/6/6a/Tony_Stark_%28Earth-616%29_from_Invincible_Iron_Man_Vol_1_1.png'
+      image: 'assets/ironman.png'
     },
     {
       id: 5,
       name: 'Superman',
       age: 32,
-      superpower: 'Vuelo, superfuerza',
+      superpower: 'Vuelo, superfuerza, visión láser',
       nickname: 'Clark',
       universe: 'DC',
-      image: 'https://static.wikia.nocookie.net/marvel_dc/images/6/6e/Superman_0012.jpg'
+      image: 'assets/superman.png'
+    },
+    {
+      id: 6,
+      name: 'Hulk',
+      age: 40,
+      superpower: 'Fuerza ilimitada, regeneración',
+      nickname: 'El Gigante Esmeralda',
+      universe: 'Marvel',
+      image: 'assets/hulk.png'
+    },
+    {
+      id: 7,
+      name: 'Black Widow',
+      age: 32,
+      superpower: 'Espionaje, artes marciales, agilidad',
+      nickname: 'Natasha',
+      universe: 'Marvel',
+      image: 'assets/blackwidow.png'
     }
   ];
 

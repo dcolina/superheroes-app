@@ -3,9 +3,15 @@
   align-items: center;
   justify-content: center;
   margin: 2rem 0 1rem 0;
+  position: relative;
+  min-height: 600px;
 }
 
 .carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
   background: #007AFF;
   border: none;
   border-radius: 50%;
@@ -23,34 +29,48 @@
   &:hover { background: #FFD600; color: #222; }
 }
 
+.carousel-arrow.left {
+  left: 0;
+}
+
+.carousel-arrow.right {
+  right: 0;
+}
+
 .superhero-card {
-  background: #23272f;
-  border-radius: 2rem;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-  padding: 2rem 2.5rem;
+  min-width: 380px;
+  max-width: 420px;
+  width: 100%;
+  height: 560px;
+  min-height: 560px;
+  max-height: 560px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 340px;
-  max-width: 400px;
-  min-height: 480px;
-  margin: 0 1rem;
-  position: relative;
   justify-content: flex-start;
+  overflow: hidden;
+  position: relative;
+  background: #23272f;
+  border-radius: 2rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  padding: 2rem 2.5rem 1.2rem 2.5rem;
+}
+
+.superhero-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .superhero-image {
   width: 180px;
   height: 180px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 1.5rem;
   box-shadow: 0 4px 16px rgba(0,0,0,0.10);
   margin-bottom: 1.2rem;
   background: #F2F2F7;
-}
-
-.superhero-info {
-  text-align: center;
 }
 
 .superhero-name {
@@ -58,20 +78,107 @@
   font-size: 2.2rem;
   color: #007AFF;
   margin: 0.2rem 0 0.1rem 0;
+  height: 48px;
+  line-height: 1.1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
 }
 
-.superhero-nickname, .superhero-data, .superhero-data-row {
-  font-family: 'Baloo 2', 'Comic Neue', 'Fredoka One', sans-serif;
-}
 .superhero-meta {
   margin-bottom: 0.7rem;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
 }
+
 .superhero-nickname {
   color: #AF52DE;
   font-size: 1.15rem;
   font-weight: 600;
   letter-spacing: 0.5px;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
+
+.superhero-data-table {
+  flex: 1 1 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-bottom: 0.5rem;
+  overflow-y: auto;
+  justify-content: flex-start;
+  min-height: 120px;
+  max-height: 160px;
+}
+
+.superhero-data-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  min-height: 2.2rem;
+  background: #23272f;
+  border-radius: 1rem;
+  padding: 0.4rem 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.superhero-label {
+  min-width: 120px;
+  display: flex;
+  align-items: center;
+  font-family: 'Baloo 2', 'Comic Neue', 'Fredoka One', sans-serif;
+  font-size: 1.08rem;
+  font-weight: bold;
+  text-align: left;
+  gap: 0.5rem;
+  color: #007AFF;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.superhero-label i {
+  color: #FF9500 !important;
+}
+
+.superhero-value {
+  flex: 1;
+  text-align: left;
+  color: #fff;
+  font-weight: bold;
+  font-family: inherit;
+  margin-left: 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.superhero-value.marvel, .superhero-value.dc { color: #FFD600; }
+
+.superhero-info {
+  text-align: center;
+}
+
+.superhero-data, .superhero-data-row {
+  font-family: 'Baloo 2', 'Comic Neue', 'Fredoka One', sans-serif;
+  word-break: break-word;
+  white-space: pre-line;
+}
+
 .superhero-data-grid {
   display: flex;
   flex-direction: column;
@@ -80,6 +187,7 @@
   width: 100%;
   align-items: flex-start;
 }
+
 .superhero-data {
   width: 95%;
   min-height: 2.2rem;
@@ -96,21 +204,9 @@
   font-weight: bold;
   justify-content: flex-start;
 }
-.superhero-data i, .superhero-data strong, .superhero-value {
+
+.superhero-data i, .superhero-data strong {
   font-weight: bold;
-}
-.superhero-value {
-  flex: 1;
-  text-align: left;
-  color: #fff;
-  font-weight: bold;
-  font-family: inherit;
-}
-.superhero-data .marvel {
-  color: #FF3B30;
-}
-.superhero-data .dc {
-  color: #FFD600;
 }
 
 .superhero-details {
@@ -124,6 +220,7 @@
   color: #FF3B30;
   font-weight: bold;
 }
+
 .superhero-details .dc {
   color: #FFD600;
   font-weight: bold;
@@ -135,6 +232,7 @@
   gap: 1.2rem;
   justify-content: center;
 }
+
 .action-btn {
   background: #23272f;
   border: none;
@@ -150,10 +248,12 @@
   align-items: center;
   justify-content: center;
 }
+
 .action-btn.edit:hover {
   background: #FFD600;
   color: #222;
 }
+
 .action-btn.delete:hover {
   background: #FF3B30;
   color: #fff;
@@ -163,36 +263,47 @@
   display: flex;
   justify-content: center;
   gap: 1rem;
+  margin-top: 2.5rem;
   margin-bottom: 1.5rem;
   overflow-x: auto;
   padding-bottom: 0.5rem;
+  z-index: 1;
 }
 
 .thumbnail {
-  width: 60px;
-  height: 60px;
-  border-radius: 1rem;
+  width: 88px;
+  height: 88px;
+  border-radius: 1.2rem;
   overflow: hidden;
   border: 3px solid transparent;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   cursor: pointer;
-  transition: border 0.2s, transform 0.2s;
-  background: #23272f;
+  transition: border 0.2s, box-shadow 0.2s;
+  background: #F2F2F7;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 16px 4px 0 4px;
+  position: relative;
+  box-sizing: border-box;
+  padding: 0px;
 }
 
 .thumbnail.selected {
   border: 3px solid #FFD600;
-  transform: scale(1.12);
+  box-shadow: 0 0 0 4px rgba(255, 214, 0, 0.35);
+  z-index: 2;
 }
 
 .thumbnail img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  border-radius: 1rem;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+  border-radius: 0.9rem;
+  background: transparent;
+  box-sizing: border-box;
 }
 
 .fab-add {
@@ -214,6 +325,7 @@
   z-index: 200;
   transition: background 0.2s, color 0.2s, transform 0.2s;
 }
+
 .fab-add:hover {
   background: #007AFF;
   color: #fff;
@@ -222,57 +334,4 @@
 
 body {
   background: linear-gradient(135deg, #23272f 0%, #181c24 100%);
-}
-
-.superhero-data-table {
-  width: 95%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-  margin-bottom: 0.5rem;
-}
-.superhero-data-row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  min-height: 2.2rem;
-  background: #23272f;
-  border-radius: 1rem;
-  padding: 0.4rem 1rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-.superhero-label {
-  min-width: 120px;
-  display: flex;
-  align-items: center;
-  font-family: 'Baloo 2', 'Comic Neue', 'Fredoka One', sans-serif;
-  font-size: 1.08rem;
-  font-weight: bold;
-  text-align: left;
-  gap: 0.5rem;
-  color: #FF9500;
-}
-.superhero-label.age,
-.superhero-label.power,
-.superhero-label.universe {
-  color: #007AFF !important;
-}
-.superhero-value {
-  flex: 1;
-  text-align: left;
-  color: #fff;
-  font-weight: bold;
-  font-family: inherit;
-  margin-left: 0.5rem;
-}
-.superhero-value.marvel, .superhero-value.dc { color: #FFD600; }
-
-.superhero-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 1.2rem;
-}
-.superhero-label i {
-  color: #FF9500 !important;
 }
