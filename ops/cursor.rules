@@ -1,0 +1,25 @@
+# cursor.rules
+
+# YAML Best Practices
+yaml:
+  enforce_indentation: 2
+  enforce_consistent_anchors: true
+  avoid_duplicate_keys: true
+  prefer_explicit_types: true
+
+# Helm Chart Best Practices
+helm:
+  enforce_chart_yaml_schema: true
+  enforce_values_yaml_schema: true
+  enforce_naming_conventions: true
+  prefer_configurable_values: true
+  enforce_image_tag_not_latest: true
+  enforce_helm_lint_clean: true
+
+# Kubernetes Manifests
+kubernetes:
+  follow_labels_annotations_best_practices: true
+  enforce_resource_limits: true
+  enforce_probe_definitions: true
+  avoid_privileged_containers: true
+  prefer_readiness_and_liveness_probes: true
