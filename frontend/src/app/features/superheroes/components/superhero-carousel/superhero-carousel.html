@@ -1,0 +1,29 @@
+<div class="carousel-container">
+  <button class="carousel-arrow left" (click)="prev()" aria-label="Anterior">&#x25C0;</button>
+
+  <div class="superhero-card">
+    <img [src]="selectedSuperhero.image" [alt]="selectedSuperhero.name" class="superhero-image" />
+    <div class="superhero-info">
+      <h2 class="superhero-name">{{ selectedSuperhero.name }}</h2>
+      <p class="superhero-nickname">"{{ selectedSuperhero.nickname }}"</p>
+      <p class="superhero-details">
+        <span>Edad: {{ selectedSuperhero.age }}</span> |
+        <span>Poder: {{ selectedSuperhero.superpower }}</span> |
+        <span>Universo: <span [ngClass]="selectedSuperhero.universe.toLowerCase()">{{ selectedSuperhero.universe }}</span></span>
+      </p>
+    </div>
+  </div>
+
+  <button class="carousel-arrow right" (click)="next()" aria-label="Siguiente">&#x25B6;</button>
+</div>
+
+<div class="carousel-thumbnails">
+  <div
+    *ngFor="let hero of superheroes; let i = index"
+    class="thumbnail"
+    [class.selected]="i === selectedIndex"
+    (click)="selectSuperhero(i)"
+  >
+    <img [src]="hero.image" [alt]="hero.name" />
+  </div>
+</div>

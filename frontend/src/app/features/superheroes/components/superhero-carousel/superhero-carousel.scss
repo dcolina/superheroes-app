@@ -1,0 +1,117 @@
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0 1rem 0;
+}
+
+.carousel-arrow {
+  background: #FFD600;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 2rem;
+  color: #222;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  cursor: pointer;
+  margin: 0 1rem;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover { background: #FF3B30; color: #fff; }
+}
+
+.superhero-card {
+  background: #fff;
+  border-radius: 2rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  padding: 2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 340px;
+  max-width: 400px;
+  min-height: 420px;
+  margin: 0 1rem;
+  position: relative;
+}
+
+.superhero-image {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  margin-bottom: 1.2rem;
+  background: #F2F2F7;
+}
+
+.superhero-info {
+  text-align: center;
+}
+
+.superhero-name {
+  font-family: 'Baloo 2', 'Comic Neue', 'Fredoka One', sans-serif;
+  font-size: 2.2rem;
+  color: #007AFF;
+  margin: 0.2rem 0 0.1rem 0;
+}
+
+.superhero-nickname {
+  font-size: 1.1rem;
+  color: #AF52DE;
+  margin-bottom: 0.5rem;
+}
+
+.superhero-details {
+  font-size: 1rem;
+  color: #222;
+  margin-top: 0.5rem;
+}
+
+.superhero-details .marvel {
+  color: #FF3B30;
+  font-weight: bold;
+}
+.superhero-details .dc {
+  color: #007AFF;
+  font-weight: bold;
+}
+
+.carousel-thumbnails {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.thumbnail {
+  width: 60px;
+  height: 60px;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 3px solid transparent;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: border 0.2s, transform 0.2s;
+  background: #F2F2F7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumbnail.selected {
+  border: 3px solid #FFD600;
+  transform: scale(1.12);
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
