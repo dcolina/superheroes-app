@@ -1,0 +1,66 @@
+# cursor.rules
+
+# Naming Conventions
+naming_conventions:
+  variables: camelCase
+  functions: camelCase
+  classes: PascalCase
+  components: PascalCase ending with "Component"
+  services: PascalCase ending with "Service"
+  modules: PascalCase ending with "Module"
+  interfaces: PascalCase starting with "I"
+  enums: PascalCase
+  constants: UPPER_SNAKE_CASE
+
+# Architecture
+architecture:
+  enforce_feature_based_structure: true
+  allow_shared_module: true
+  core_module_for_global_services: true
+  lazy_load_feature_modules: true
+  smart_vs_presentational_components: enforced
+  avoid_logic_in_templates: true
+
+# Styling / UX / A11Y
+styling:
+  use_strict_typing: true
+  enforce_immutable_data: true
+  prefer_async_pipes: true
+  prefer_signal_inputs: true
+  mobile_first_design: true
+  enforce_a11y_standards: true
+  responsive_ui: true
+  use_loading_states: true
+  provide_feedback_on_user_actions: true
+  use_error_boundaries: true
+
+# Data Layer & API
+data_layer:
+  use_dedicated_services_for_data_access: true
+  handle_http_errors_gracefully: true
+  use_models_for_data_shapes: true
+  use_dto_if_needed: true
+  secure_api_calls_with_tokens: true
+  avoid_direct_data_access_in_components: true
+
+# Testing
+testing:
+  framework: Jasmine + Karma
+  e2e_testing_framework: Cypress
+  coverage_threshold: 80
+  test_all_business_logic: true
+  test_components_logic: true
+  test_services_logic: true
+  mock_external_dependencies: true
+  use_test_ids_for_ui_elements: true
+
+# Code Quality
+code_quality:
+  linting: eslint
+  formatting: prettier
+  enforce_no_unused_vars: true
+  enforce_consistent_return: true
+  avoid_any_type: true
+  prefer_readable_code: true
+  document_public_apis: true
+  write_self_explanatory_code: true
