@@ -260,16 +260,31 @@
 
 .carousel-thumbnails {
   display: flex;
-  justify-content: center;
+  align-items: center;
   gap: 1rem;
   margin-top: 2.5rem;
   margin-bottom: 1.5rem;
   overflow-x: auto;
+  overflow-y: hidden;
   padding-bottom: 0.5rem;
   z-index: 1;
+  width: 100%;
+  white-space: nowrap;
+  scrollbar-width: thin;
+  scrollbar-color: #FFD600 #23272f;
+}
+
+.carousel-thumbnails::-webkit-scrollbar {
+  height: 8px;
+  background: #23272f;
+}
+.carousel-thumbnails::-webkit-scrollbar-thumb {
+  background: #FFD600;
+  border-radius: 4px;
 }
 
 .thumbnail {
+  flex: 0 0 auto;
   width: 88px;
   height: 88px;
   border-radius: 1.2rem;

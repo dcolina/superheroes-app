@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ViewChildren, ElementRef, QueryList, AfterViewInit } from '@angular/core';
 import { NgClass, NgFor, NgIf } from '@angular/common';
 
 export interface ISuperhero {
@@ -18,7 +18,7 @@ export interface ISuperhero {
   templateUrl: './superhero-carousel.html',
   styleUrl: './superhero-carousel.scss'
 })
-export class SuperheroCarousel {
+export class SuperheroCarousel implements AfterViewInit {
   superheroes: ISuperhero[] = [
     {
       id: 1,
@@ -87,19 +87,36 @@ export class SuperheroCarousel {
 
   selectedIndex = 0;
 
+  @ViewChild('thumbnailsContainer') thumbnailsContainer!: ElementRef<HTMLDivElement>;
+  @ViewChildren('thumbnail') thumbnails!: QueryList<ElementRef<HTMLDivElement>>;
+
+  ngAfterViewInit() {
+    this.centerSelectedThumbnail();
+  }
+
   get selectedSuperhero(): ISuperhero {
     return this.superheroes[this.selectedIndex];
   }
 
   prev() {
     this.selectedIndex = (this.selectedIndex - 1 + this.superheroes.length) % this.superheroes.length;
+    this.centerSelectedThumbnail();
   }
 
   next() {
     this.selectedIndex = (this.selectedIndex + 1) % this.superheroes.length;
+    this.centerSelectedThumbnail();
   }
 
   selectSuperhero(index: number) {
     this.selectedIndex = index;
+    this.centerSelectedThumbnail();
+  }
+
+  centerSelectedThumbnail() {
+    const selected = this.thumbnails.get(this.selectedIndex)?.nativeElement;
+    if (selected) {
+      selected.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    }
   }
 }
